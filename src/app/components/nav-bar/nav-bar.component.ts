@@ -12,7 +12,8 @@ export class NavBarComponent{
   titles:{[key:string]:any}[]=[
     {name:"home",path:"/"},
     {name:"about",path:"about"},
-    {name:"parent",path:"parent"}
+    {name:"parent",path:"parent"},
+    {name:"params",path:"params/1"}
   ];
   constructor(){
 
