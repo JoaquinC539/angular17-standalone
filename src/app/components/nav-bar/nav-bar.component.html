@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-app">
+        <ul class="navbar-nav">
+          @for(navRoute of titles;track navRoute){
+          <li
+            class="nav-item"
+            routerLinkActive="active active-route"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" href="#" routerLink="{{ navRoute['path'] }}">{{
+              navRoute["name"]
+            }}</a>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

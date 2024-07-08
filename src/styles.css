@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+.active-route{
+    background-color: rgba(111, 199, 211, 0.76);
+}
+.content-wrapper{
+    padding: 26px;
+}

@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-center">
+    <h4>Parent</h4>
+  </div>
+  <div class="content-header row">
+    <p> Parent</p>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-content collapse-show">
+            <div class="card-body"> 
+                <div class="row">
+                    <h4>Child</h4>
+                    <app-child (dataEmitter)="receivData($event)" [message]="'Hello from child info'"></app-child>
+                    <p>{{receivedData}}</p>
+                </div>             
+                <hr>
+                <div class="row">
+                    <h4>Subject</h4>
+                    <button (click)="triggerSub()">trigger</button>
+                    <br>
+                    @if(load){
+                        <p>Loading...</p>
+                    }@else {
+                        <p>{{subData}}</p>
+                    }
+                    
+                </div>    
+                <hr>
+                <div class="row">
+                    <h4>Fetch</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <th class="text-center">id</th>
+                                <th class="text-center">name</th>
+                                <th class="text-center">last name</th>
+                                <th class="text-center">email</th>
+                            </thead>
+                            <tbody>
+                                @for (user of fetchData["data"]; track $index) {
+                                    <tr>
+                                        <td class="text-center">{{user["id"]}}</td>
+                                        <td class="text-center">{{user["first_name"]}}</td>
+                                        <td class="text-center">{{user["last_name"]}}</td>
+                                        <td class="text-center">{{user["email"]}}</td>
+                                    </tr>
+                                    
+                                }
+                                @empty {
+                                    <tr>
+                                        <td>Not found</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    
+                </div>    
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
